@@ -1,4 +1,4 @@
-def report_count(token):
+def report_count(token, case_sensitive=False):
     if len(token.split()) > 1:
         raise MoreThanOneToken(f"Expected 1 token, given {len(token.split())} tokens")
     with open("corpus.txt") as f:
@@ -9,8 +9,12 @@ def report_count(token):
         words = line.split()
     
         for word in words:
-            if word.lower() == token.lower():
-                count += 1
+            if case_sensitive:
+                if word.lower() == token.lower():
+                    count += 1
+            else:
+                if word == token:
+                    count += 1
     
     return count
 
