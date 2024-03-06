@@ -1,8 +1,12 @@
+def open_file(file_name):
+    with open("corpus.txt") as f:
+        text = f.readlines()
+    return text
+
 def report_count(token, case_sensitive=False):
     if len(token.split()) > 1:
         raise MoreThanOneToken(f"Expected 1 token, given {len(token.split())} tokens")
-    with open("corpus.txt") as f:
-        text = f.readlines()
+    text = open_file("corpus.txt")
     count = 0
 
     for line in text:
