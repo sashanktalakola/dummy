@@ -1,9 +1,14 @@
 def report_count(token):
-    text = open("corpus.txt")
-    split_text = text.split()
+    
+    with open("corpus.txt") as f:
+        text = f.readlines()
     count = 0
-    for word in split_text:
-        if word == token:
-            count += 1
+
+    for line in text:
+        words = line.split()
+    
+        for word in words:
+            if word == token:
+                count += 1
     
     return count
