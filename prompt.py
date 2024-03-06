@@ -8,7 +8,7 @@ def report_count(token):
         words = line.split()
     
         for word in words:
-            if wordlower() == token.lower():
+            if word.lower() == token.lower():
                 count += 1
     
     return count
