@@ -9,7 +9,7 @@ def report_count(token, case_sensitive=False):
         words = line.split()
     
         for word in words:
-            if case_sensitive:
+            if not case_sensitive:
                 if word.lower() == token.lower():
                     count += 1
             else:
