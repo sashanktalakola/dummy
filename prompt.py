@@ -20,7 +20,7 @@ def report_count(token, case_sensitive=False):
                 if word == token:
                     count += 1
     
-    return count
+    return f"The term {token} shows up in the corpus {count} times."
 
 class MoreThanOneToken(Exception):
     def __init__(self, message):
